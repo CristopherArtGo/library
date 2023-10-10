@@ -11,50 +11,56 @@
     <div class="container">
         <div class="header">
             <div id="logo">Personal Library</div>
-            <button id="toggleBtn">+</button>
+            <button id="toggleBtn" onclick="toggleSideBar()">+</button>
         </div>
-        <div class="main">
-            <div id="bookCard">
-                <div class="details">
-                    <div class="title">Atomic Habits</div>
-                    <div class="author">by James Clear</div>
-                    <div class="pages">312 Pages</div>
-                </div>
-                <div class="bottom">
-                    <div class="status">
-                        Not Read 
-                        <label class="switch">
-                        <input type="checkbox" name="read" id="read">
-                        <span class="slider round"></span></label>
-                        Read
+        <div class="mainDiv">
+            <div class="main">
+                <div id="bookCard">
+                    <div class="details">
+                        <div class="title">Atomic Habits</div>
+                        <div class="author">by James Clear</div>
+                        <div class="pages">312 Pages</div>
                     </div>
-                    <div class="buttons">
-                        <span class="material-symbols-outlined" class="editBtn">edit</span>
-                        <span class="material-symbols-outlined" class="deleteBtn">delete</span>
+                    <div class="bottom">
+                        <div class="status">
+                            Not Read 
+                            <label class="switch">
+                            <input type="checkbox" name="read" id="read">
+                            <span class="slider round"></span></label>
+                            Read
                         </div>
+                        <div class="buttons">
+                            <span class="material-symbols-outlined" class="editBtn">edit</span>
+                            <span class="material-symbols-outlined" class="deleteBtn">delete</span>
+                            </div>
+                    </div>
                 </div>
             </div>
-
-
-            
+            <div id="sideBar">
+                <h1 class="form-header">Add a Book</h1>
+                <form action="#" method="get" class="add-book-form" id="addBookForm">
+                    <div class="add-book-title">
+                        <input type="text" id="title" pattern="^[a-zA-Z]+$" name="title" required placeholder="Title *" value="" maxlength="30" oninvalid="invalidMessage(this);" oninput="invalidMessage(this);">
+                        <label for="title">Title</label>
+                    </div>
+                    <div class="add-book-author">
+                        <input type="text" id="author" pattern="^[a-zA-Z]+$" name="author" required placeholder="Author *" value="" maxlength="30" oninvalid="invalidMessage(this);" oninput="invalidMessage(this);">
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="add-book-pages">
+                        <input type="number" id="pages" pattern="^[0-9]+$" name="pages" required placeholder="Pages *" value="" oninvalid="invalidMessage(this);" oninput="invalidMessage(this);">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="add-book-status">
+                        <input type="checkbox" id="status" name="status" value="">
+                        <label for="status">Read</label>
+                    </div>
+                        <button id="submit">Add Book</button>
+                </form>
+            </div>
         </div>
         <div class="footer">Copyright © <a href="https://github.com/CristopherArtGo">Cristopher Go 2023</a></div>
     </div>
-
-
-    <script>
-        function Book(title, author, pages, read) {
-            this.title = title
-            this.author = author
-            this.pages = pages
-            this.read = read
-            this.info = function() {
-                return `${title} by ${author}, ${pages} pages, ${read}`
-            }
-        }
-
-        const atomicHabits = new Book("Atomic Habits", "James Clear", 300, "already read");
-        console.log(atomicHabits.info());
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>

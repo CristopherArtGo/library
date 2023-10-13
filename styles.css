@@ -20,8 +20,8 @@ body{
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  box-shadow: 0px 2px rgb(100, 100, 100);
-  background-color: black;
+  box-shadow: 0px 2px rgb(62, 60, 60);
+  background-color: rgb(225, 129, 51);
   color: white;
   font-weight: bolder;
   font-size: larger;
@@ -31,7 +31,7 @@ body{
 #toggleBtn {
   border-radius: 50%;
   color: white;
-  background-color: black;
+  background-color: rgb(225, 129, 51);
   border: solid 2px white;
   flex: 0 0 auto;
   font-size: large;
@@ -41,7 +41,7 @@ body{
 }
 
 #toggleBtn:hover {
-  background-color: #444;
+  background-color: rgb(190, 111, 46);
 }
 
 #sideBar {
@@ -82,13 +82,14 @@ form {
   grid-auto-rows: max-content;
   padding: 20px;
   gap: 20px;
-  background-color: rgb(226, 226, 226);
+  background-color: #fbf1a5;
+  margin-top: 2px;
 }
 
 .main > div {
   border: solid;
   border-radius: 10px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   box-shadow: 2px 2px rgb(194, 194, 194);
   padding: 20px;
   display: flex;
@@ -125,9 +126,9 @@ form {
 }
   
 .switch input { 
-opacity: 0;
-width: 0;
-height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
   
 .slider {
@@ -155,11 +156,11 @@ height: 0;
 }
   
 input:checked + .slider {
-  background-color: #21f360;
+  background-color: #22e35c;
 }
   
 input:focus + .slider {
-  box-shadow: 0 0 10px #21f360;
+  box-shadow: 0 0 5px #22e35c;
 }
 
 input:checked + .slider:before {
@@ -180,6 +181,122 @@ input:checked + .slider:before {
 .status {
   display: flex;
   gap: 6px;
+}
+
+#sideBar div {
+  position: relative;
+  min-height: 1px;
+  width: 100%;
+  max-width: 100%;
+}
+
+#sideBar button, #sideBar input {
+  font-size: 100%;
+  margin: 0;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+
+#sideBar input {
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  padding: 24px 10px 12px;
+  font-size: 16px;
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+  width: 200px;
+  color: black;
+  margin: 8px;
+}
+:focus {
+  outline: 0;
+}
+
+#sideBar label {
+  padding: 5px 0;
+  font-size: 14px;
+  font-size: 0.75rem;
+  top: 10px;
+  left: 18px;
+  color: #8BC34A;
+  animation: silo-fade 0.2s;
+  max-width: 80%;
+  display: none;
+  position: absolute;
+}
+
+@keyframes silo-fade {
+  0% {
+      opacity: 0;
+      transform: translateY(-1.4em);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#sideBar input:focus + label,
+#sideBar input[required]:valid + label,
+#sideBar input:not(:placeholder-shown) + label {
+  display: block;
+}
+
+input:invalid {
+  border: 1px solid #b92326;
+  background-color: rgba(185, 35, 38, 0.25);
+}
+
+input:focus:invalid {
+  background-color: transparent;
+  border: 1px solid #b92326;
+}
+
+#sideBar input:invalid + label {
+  color: #b92326;
+}
+
+input:valid {
+  border: 1px solid #8BC34A;
+  background-color: rgba(139, 195, 74, 0.25);
+}
+
+input:focus:valid {
+  border: 1px solid #8BC34A;
+  background-color: transparent;
+}
+
+input:valid + label {
+  color: #8BC34A;
+}
+
+input:placeholder-shown {
+  background-color: transparent;
+  border: 1px solid #d8d8d8;
+}
+
+input::placeholder {
+  color: #d8d8d8;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+#sideBar .add-book-status label {
+  color: black;
+  display: inline;
+  font-size: 16px;
+  top: 0;
+  margin: 0;
+}
+
+#sideBar button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(11, 95, 54);
+  color: white
 }
 
 .footer {

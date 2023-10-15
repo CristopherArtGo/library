@@ -65,9 +65,6 @@ body{
     width: 100%;
     right: calc(-100% - 40px);
   }
-  .main div {
-    min-width: 500px;
-  }
 }
 
 #sideBar > h1 {

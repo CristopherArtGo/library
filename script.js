@@ -4,14 +4,14 @@ function toggleSideBar() {
     if (sideBarClosed == true)
     {
         document.getElementById("toggleBtn").style.transform = "rotate(45deg)";
-        document.getElementById("toggleBtn").style.color = "#B70100";
-        document.getElementById("sideBar").style.right = "0px";
-        document.getElementById("toggleBtn").style.border = "solid #B70100";
+        document.getElementById("toggleBtn").style.color = "#c01414";
+        document.getElementById("sideBar").style.right = "-20px";
+        document.getElementById("toggleBtn").style.border = "solid #c01414";
         sideBarClosed = false;
     }
     else {
         document.getElementById("toggleBtn").style.transform = "rotate(0deg)";
-        document.getElementById("sideBar").style.right = "-300px";
+        document.getElementById("sideBar").style.right = "calc(-100% - 40px)";
         document.getElementById("toggleBtn").style.color = "white";
         document.getElementById("toggleBtn").style.border = "solid white";
         sideBarClosed = true;

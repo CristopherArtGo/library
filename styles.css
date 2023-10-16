@@ -71,7 +71,7 @@ body{
   margin-top: 50px;
 }
 
-#sideBar div {
+#sideBar form div {
   position: relative;
   min-height: 1px;
   width: 100%;
@@ -95,16 +95,16 @@ body{
   transition: all 0.5s ease-in-out;
   width: 200px;
   color: black;
-  margin: 8px;
 }
 :focus {
   outline: 0;
 }
 
-#sideBar label {
+#sideBar > form > div > label {
   padding: 5px 0;
   font-size: 14px;
   font-size: 0.75rem;
+  font-weight: normal;
   top: 10px;
   left: 18px;
   color: #8BC34A;
@@ -112,6 +112,12 @@ body{
   max-width: 80%;
   display: none;
   position: absolute;
+}
+
+.check {
+  display: flex;
+  justify-self: center;
+  align-self: center;
 }
 
 @keyframes silo-fade {
@@ -167,11 +173,6 @@ body{
   color: transparent;
 }
 
-.add-book-status{
-  color: black;
-  display: block;
-}
-
 #sideBar button {
   border: solid;
   padding: 10px;
@@ -185,14 +186,15 @@ body{
   cursor: pointer;
 }
 
-#sidebar button:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+#submit:hover, #submit:focus {
+  background-color: #00ff4c;
+  box-shadow: 0px 0px 10px #00ff4c;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .mainDiv{
@@ -242,7 +244,9 @@ form {
 
 .status {
   display: flex;
-  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 .switch {
@@ -299,11 +303,6 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-.status {
-  display: flex;
-  gap: 6px;
 }
 
 .footer {

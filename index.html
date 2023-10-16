@@ -51,12 +51,14 @@
                         <input type="number" id="pages" pattern="^[0-9]+$" name="pages" required placeholder="Pages *" value="" oninvalid="invalidMessage(this);" oninput="invalidMessage(this);" min="1">
                         <label for="pages">Pages</label>
                     </div>
-                    <div class="check status">
-                        Not Read 
-                        <label class="switch">
-                        <input type="checkbox" name="read" id="read">
-                        <span class="slider round"></span></label>
-                        Read
+                    <div class="check">
+                        <div class="status">
+                            Not Read 
+                            <label class="switch">
+                            <input type="checkbox" name="read" id="read">
+                            <span class="slider round"></span></label>
+                            Read
+                        </div>
                     </div>
                         <button id="submit">Add Book</button>
                 </form>

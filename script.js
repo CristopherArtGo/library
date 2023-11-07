@@ -2,11 +2,15 @@ let sideBarClosed = true;
 const TITLE_INPUT = document.getElementById("title");
 const AUTHOR_INPUT = document.getElementById("author");
 const PAGES_INPUT = document.getElementById("pages");
+const MAIN = document.getElementById("main");
+let BOOKCARDTEMPLATE = document.getElementById("bookCard");
+let library = [];
 
 let title;
 let author;
 let pages;
 let read;
+
 
 function toggleSideBar() {
     if (sideBarClosed == true)
@@ -37,8 +41,9 @@ function Book(title, author, pages, read) {
     }
 }
 
-const atomicHabits = new Book("Atomic Habits", "James Clear", 300, "already read");
-console.log(atomicHabits.info());
+const atomicHabits = new Book("Atomic Habits", "James Clear", 300, true);
+
+library.push(atomicHabits);
 
 function addBook() {
     title = TITLE_INPUT.value;
@@ -51,13 +56,22 @@ function addBook() {
     else {
         read = false;
     }
-    const currentBook = new Book(title, author, pages, read);
-    console.log(currentBook.info());
+    let currentBook = new Book(title, author, pages, read);
     if (TITLE_INPUT.checkValidity() && AUTHOR_INPUT.checkValidity() && PAGES_INPUT.checkValidity())
     {
         toggleSideBar();
-    } 
+        library.push(currentBook);
+        BOOKCARDTEMPLATE.getElementsByClassName("details").getElementsByClassName("title").textContent = `${title}`;
+        BOOKCARDTEMPLATE.getElementsByClassName("details").getElementsByClassName("author").textContent = `${author}`;
+        BOOKCARDTEMPLATE.getElementsByClassName("details").getElementsByClassName("pages").textContent = `${pages} Pages`;
+        let content = BOOKCARDTEMPLATE.content.cloneNode(true);
+        MAIN.appendChild(content);
+        TITLE_INPUT.value = "";
+        AUTHOR_INPUT.value = "";
+        PAGES_INPUT.value = "";    
+        return;
+    }
     return;
 }
 
-
+console.log(document.getElementById("bookCard").content.cloneNode(true));

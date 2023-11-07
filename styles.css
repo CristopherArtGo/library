@@ -202,7 +202,7 @@ form {
   display: flex;
 }
 
-.main {
+#main {
   flex: 1;
   width: 100%;
   align-content: start;
@@ -216,7 +216,7 @@ form {
   margin-top: 50px;
 }
 
-.main > div {
+#main > div {
   border-radius: 20px;
   background-color: #ffffff;
   padding: 20px;
@@ -230,14 +230,14 @@ form {
   font-weight: bolder;
 }
 
-.main > div > .bottom {
+#main > div > .bottom {
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.main > div > .bottom .buttons {
+#main > div > .bottom .buttons {
   display: flex;
   align-items: center;
 }
